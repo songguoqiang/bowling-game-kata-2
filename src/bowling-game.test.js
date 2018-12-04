@@ -29,6 +29,14 @@ test("should return score of 14 with strike on first roll", () => {
   rollMany(game, 16, 0);
   expect(game.score()).toEqual(14);
 });
+test('should return score of 12 with a strike on the last frame', () => {
+  rollMany(game,18,0);
+  game.roll(10);
+  game.roll(1);
+  game.roll(1);
+  expect(game.score()).toEqual(12);
+})
+
 function rollSpare(game) {
   game.roll(5);
   game.roll(5);

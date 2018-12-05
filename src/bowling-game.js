@@ -16,7 +16,11 @@ class Game {
       if (this.isStrikeFrame(firstThrow)) {
         const secondThrow = this.scoreArray[rollIndex + 1];
         const thirdThrow = this.scoreArray[rollIndex + 2];
-        totalScore += this.strikeFrameScore(firstThrow, secondThrow, thirdThrow);
+        totalScore += this.strikeFrameScore(
+          firstThrow,
+          secondThrow,
+          thirdThrow
+        );
         rollIndex += 1;
       } else {
         const secondThrow = this.scoreArray[rollIndex + 1];
@@ -43,12 +47,11 @@ class Game {
     return firstThrow + secondThrow + firstThrowOfNextFrame;
   }
   strikeFrameScore(firstThrow, secondThrow, thirdThrow) {
-    return firstThrow + secondThrow + thirdThrow
+    return firstThrow + secondThrow + thirdThrow;
   }
-  isStrikeFrame (firstThrow){
-    return firstThrow === 10
+  isStrikeFrame(firstThrow) {
+    return firstThrow === 10;
   }
-
 }
 
 module.exports = Game;
